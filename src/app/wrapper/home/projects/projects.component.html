@@ -1,0 +1,82 @@
+<section class="section-subdev">
+    <div class="projects-header">
+        <p>Проекти</p>
+        <p class="projects-header__time-txt">{{currentDate}}</p>
+    </div>
+    <div class="projects-general">
+        <div class="projects-status">
+            <div class="projects-status__box">
+                <div class="projects-status__number">45</div>
+                <div class="projects-status__type">В процесі</div>
+            </div>
+            <div class="projects-status__box">
+                <div class="projects-status__number">24</div>
+                <div class="projects-status__type">Заплановані</div>
+            </div>
+            <div class="projects-status__box">
+                <div class="projects-status__number">64</div>
+                <div class="projects-status__type">Затверджені проекти</div>
+            </div>
+        </div>
+        <div class="view-actions" #viewActionBox>
+            <div (click)="listView()"  class="view-btn list-view"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line></svg></div>
+            <div (click)="gridView()" class="view-btn flex-view active" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect></svg></div>
+        </div>
+    </div>
+    <div #projectList class="projects-items-box jsGridView" >
+        <div class="projects-item" *ngFor="let project of projects" >
+            <div class="projects-item__wrapper" [style.background-color]="project.boxColor">
+                <div class="projects-item__general">
+                    <span>{{project.start | dateHumanReadable}}</span>
+                    <div class="more-wrapper">
+                        <a routerLink="/project/{{project._id}}"><button class="projects-item-general__button"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="12" cy="5" r="1"></circle>
+                            <circle cx="12" cy="19" r="1"></circle></svg>
+                        </button></a>
+                    </div>
+                </div>
+                <div class="projects-item-title">
+                    <div class="projects-item-title__txt_main">{{project.topic}}</div>
+                    <div class="projects-item-title__txt_sub">{{project.customTopic | truncateWords}}</div>
+                </div>
+                <div class="projects-item-content">
+                    <div class="projects-item-content__header">Прогрес</div>
+                    <div class="projects-item-content__bar">
+                        <div class="projects-item-content__progress" [style.width.%]="project.progress"
+
+                            [style.background-color]="project.progressBarColor">
+                        </div>
+                    </div>
+                    <div class="projects-item-content__percent"></div>
+                </div>
+                <div class="projects-item-footer">
+                    <div class="projects-item-footer__participants">
+                        <img src="./photo-1503023345310-bd7c1de61c7d.jpeg" alt="">
+                        <button id="add-participant">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+    <path d="M12 5v14M5 12h14"></path>
+  </svg>
+                        </button>
+                    </div>
+                    <div class="projects-item-footer__days-left">
+                        <span>{{ currentDateTimestasmp | dateDifferance: project.deadline }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>

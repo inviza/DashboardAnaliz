@@ -1,0 +1,30 @@
+<div class="solo-view">
+    <div class="project-form-box">
+        <form class="project-form" [formGroup]="projectForm" (submit)="submitForm()">
+            <h3>{{templateValues.title }}</h3>
+            <div class="form-group">
+                <label>Тема</label>
+                <select name="topic" id="topic" formControlName="topic">
+                    <option *ngFor="let name of topicNames" value="{{name}}">{{name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Вид робіт</label>
+                <input type="text" name="customTopic" id="customTopic" formControlName="customTopic">
+            </div>
+            <div class="form-group">
+                <label>Прогрес</label>
+                <input type="number" name="progress" id="progress" formControlName="progress"> 
+            </div>
+            <div class="form-group">
+                <label>Старт</label>
+                <input type="date" name="start" id="start" formControlName="start">
+            </div>
+            <div class="form-group">
+                <label>Кінець</label>
+                <input type="date" name="deadline" id="deadline" formControlName="deadline">
+            </div>
+            <button [disabled]="!projectForm.valid" type="submit">{{templateValues.button}}</button>
+        </form>
+    </div>
+</div>

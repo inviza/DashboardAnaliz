@@ -1,0 +1,24 @@
+{
+  "name": "dashboardserver",
+  "version": "1.0.0",
+  "description": "related to dashboard",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd ./config/dev.env nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dzuiba M O",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.16",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "nodemon": "^1.18.9"
+  }
+}

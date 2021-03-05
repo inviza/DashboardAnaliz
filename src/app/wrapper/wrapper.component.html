@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <app-header
+    ></app-header>
+ 
+    <main class="main-content">
+        <app-sidebar class="sidebar"></app-sidebar>
+        <router-outlet></router-outlet>
+        
+        <!-- <app-content class="projects"></app-content>
+
+            <app-message  class="messages-conteiner"
+                [messageShow]="messageShow"
+                [ngClass]=" messageShow ? 'show' : ''"
+                (msgClose)="msgCloseSubmit($event)"
+            ></app-message> -->
+        
+    </main>
+    
+</div>

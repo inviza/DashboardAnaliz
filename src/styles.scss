@@ -1,0 +1,252 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --wrapper: #f3f6fd;
+  --main-color: #1f1c2e;
+  --secondary-color: #4A4A4A;
+  --link-color: #1f1c2e;
+  --link-color-hover: #c3cff4;
+  --link-color-active: #fff;
+  --link-color-active-bg: #1f1c2e;
+  --projects-section: #fff;
+  --message-box-hover: #fafcff;
+  --message-box-border: #e9ebf0;
+  --more-list-bg: #fff;
+  --more-list-bg-hover:  #f6fbff;
+  --more-list-shadow: rgba(209, 209, 209, 0.4);
+  --button-bg: #1f1c24;
+  --search-area-bg: #fff;
+  --star: #1ff1c2e;
+  --message-btn: #fff;
+}
+
+.dark:root {
+  --wrapper: #1f1d2b;
+  --main-color: #fff;
+  --secondary-color: rgba(255,255,255,.8);
+  --projects-section: #252836;
+  --link-color: rgba(255,255,255,.8);
+  --link-color-hover: rgba(195, 207, 244, 0.1);
+  --link-color-active-bg: rgba(195, 207, 244, 0.2);
+  --button-bg: #2f3142;
+  --search-area-bg: #2f3142;
+  --message-box-hover: #303446;
+  --message-box-border: rgba(255,255,255,.1);
+  --star: #ffd92c;
+  --light-font: rgba(255,255,255,.8);
+  --more-list-bg: #2f3142;
+  --more-list-bg-hover:  rgba(195, 207, 244, 0.1);
+  --more-list-shadow: rgba(195, 207, 244, 0.1);
+  --message-btn: rgba(195, 207, 244, 0.1);
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 720px) {
+  .app-name, .profile-btn span { display: none; }
+  
+  .profile__switch-mode, .profile__add, .profile__notice {
+    width: 20px;
+    height: 20px;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+  .header-profile button {
+    margin-left: 4px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .projects-section { overflow: auto; }
+  
+  .sidebar, .app-icon { display: none; }
+  
+  .main-content { padding: 16px 12px 24px 12px;}
+  
+  .status-number, .status-type {
+    font-size: 10px;
+  }
+  
+  .view-btn {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .header {
+    padding: 16px 10px;
+  }
+  
+  .search__input {
+    max-width: 120px;
+  }
+  
+  .projects-items-box.jsGridView .projects-item {
+    width: 100%;
+  }
+  
+  .projects-section {
+    padding: 24px 16px 0 16px;
+  }
+  
+  .profile-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .header {
+    padding: 10px;
+    display: block;
+  }
+  .header-general {
+    justify-content: center;
+  }
+  
+  .projects-section-header p,
+  .projects-section-header .time{
+    font-size: 18px;
+  }
+  
+  .status-type {
+    padding-right: 4px;
+    
+    &:after {
+      display: none;
+    }
+  }
+  
+  .search-input {
+    font-size: 14px;
+  }
+  
+  .messages-btn { top: 48px; }
+
+  .projects-item-title__txt_main {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .projects-item-title__txt_sub {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .projects-items-box.jsListView .projects-item__general > span {
+    font-size: 10px;
+  }
+
+  .projects-item-content__header {
+    font-size: 12px;
+  }
+
+  .box-progress-percentage {
+    font-size: 10px;
+  }
+
+  .days-left {
+    font-size: 8px;
+    padding: 6px 6px;
+    text-align: center;
+  }
+
+  .projects-items-box.jsListView .projects-item__wrapper > * {
+    margin-right: 10px;
+    height: 100%;
+  }
+
+  .projects-items-box.jsListView .more-wrapper {
+    right: 2px;
+    top: 10px;
+  }
+}
+
+.dual-view-component {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+
+  .dual-view-component-left {
+    flex: 2;
+    background-color: var(--projects-section);
+    border-radius: 32px;
+    padding: 32px 32px 0 32px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+
+}
+@media screen and (max-width: 880px) {
+
+  .dual-view-component-right {
+    transform: translateX(100%);
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 0;
+    width: 0;
+    
+    
+    &.show {
+      transform: translateX(0);
+      opacity: 1;
+      margin-left: 0;
+  
+    height: 100%;
+    width: 100%;
+    }
+  }
+
+}
+.dual-view-component-right {
+  flex-shrink: 0;
+  padding-bottom: 32px;
+  background-color: var(--projects-section);
+  margin-left: 24px;
+  flex: 1;
+  // width: 100%;
+  border-radius: 30px;
+  // position: relative;
+  overflow: auto;
+  transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
+}
+
+.solo-view {
+  height: 100%;
+  display: flex;
+}

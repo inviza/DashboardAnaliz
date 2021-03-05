@@ -1,0 +1,49 @@
+.wrapper { 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--wrapper);
+    transition: .5s;
+}
+.main-content {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  padding: 16px 24px 24px 0;
+}
+
+  
+  .sidebar {
+    padding: 40px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+
+  @media screen and (max-width: 880px) {
+    .messages-conteiner {
+      transform: translateX(100%);
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      z-index: 2;
+      height: 100%;
+      width: 100%;
+      display: none;
+      
+      
+      &.show {
+        transform: translateX(0);
+        opacity: 1;
+        margin-left: 0;
+        display: block;
+      }
+      
+      .messages-close { display: block; }
+    }
+  }
+
+

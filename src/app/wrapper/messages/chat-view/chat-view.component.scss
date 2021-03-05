@@ -1,0 +1,122 @@
+
+input:focus{
+    outline: none;
+}
+
+.chat {
+    position: relative;
+    height: 100%;
+
+    &-profile {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid var(--main-color);
+        background-color: #fff;
+
+        &__person { 
+            margin: 0px 0px 5px 0px;
+            text-align: center;
+        }
+
+        &__status {
+            margin: 0px;
+            text-align: center;
+            font-size: 0.7rem;
+        }
+        &__status span {
+            position: relative;
+        }
+        &__status span:after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translatey(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #66ff00;
+            // border: 1px solid var(--secondary-color);
+          }
+    }
+
+    &-sms{
+        height: 100%;
+        overflow-y: auto;
+        // max-width: 50%;
+        padding-left: 10px;
+        
+        &__enemy {
+            display: flex;
+            
+            
+            & span {
+                border-radius: 20px;
+                padding: 10px;
+                background-color: rgb(236, 236, 236);
+                flex-basis: 50%;
+            }
+            
+        }
+
+        &__own {
+            display: flex;
+            justify-content: flex-end;
+            border-radius: 20px;
+            padding: 10px;
+            // max-width: 50%;
+            & span {
+                display: flex;
+                justify-content: flex-end;
+                flex-basis: 50%;
+                border-radius: 20px;
+                padding: 10px;
+                background-color: rgb(219, 246, 253);
+            }
+        }
+    }
+
+    &-form {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        &__form {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 5px;
+            padding-left: 10px;
+            border-top: 2px solid var(--main-color);
+        }
+        
+        &__input {
+            height: 24px;
+            width: 90%;
+            border-width: 0px;
+            cursor: text;
+        }
+
+        &__submit {
+            width: 10%;
+            border-width: 0px;
+            padding: 0;
+            background-color: #fff ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__svg {
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+}
